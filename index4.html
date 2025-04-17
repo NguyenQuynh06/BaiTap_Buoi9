@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 4</title>
+    <style>
+      .form-box {
+        border: 1px solid black;
+        width: 500px;
+        padding: 20px;
+        margin: auto;
+      }
+      h2 {
+        color: purple;
+        text-align: center;
+      }
+      .menu {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        margin-left: 15%;
+      }
+      .menu a {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: rgb(202, 105, 138);
+        transition: 0.3s;
+      }
+      .menu a:hover {
+        background-color: rgb(139, 72, 95);
+      }
+      .home a {
+        background-color: rgb(20, 209, 209);
+      }
+      .home a:hover {
+        background-color: rgba(25, 139, 139, 0.651);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-box">
+      <h2>FORM ĐĂNG KÝ</h2>
+      <form id="registerForm" onsubmit="return validateForm()">
+        Họ: <input type="text" id="lastName" /><br /><br />
+        Tên: <input type="text" id="firstName" /><br /><br />
+        Ngày sinh: Ngày
+        <select id="day">
+          <script>
+            for (let i = 1; i <= 31; i++) {
+              document.write(`<option value="${i}">${i}</option>`);
+            }
+          </script>
+        </select>
+        Tháng
+        <select id="month">
+          <script>
+            for (let i = 1; i <= 12; i++) {
+              document.write(`<option value="${i}">${i}</option>`);
+            }
+          </script>
+        </select>
+        Năm
+        <select id="year">
+          <script>
+            for (let i = 1950; i <= 2025; i++) {
+              document.write(`<option value="${i}">${i}</option>`);
+            }
+          </script></select
+        ><br /><br />
+        Giới tính:
+        <input type="radio" name="gender" value="Nam" /> Nam
+        <input type="radio" name="gender" value="Nữ" /> Nữ<br /><br />
+        Số điện thoại: <input type="text" id="phone" /><br /><br />
+        Sở thích:
+        <input type="checkbox" name="hobby" value="Đọc sách" /> Đọc sách
+        <input type="checkbox" name="hobby" value="Xem phim" /> Xem phim
+        <input type="checkbox" name="hobby" value="Nghe nhạc" /> Nghe nhạc
+        <input type="checkbox" name="hobby" value="Đá bóng" /> Đá bóng<br /><br />
+        Khác: <br />
+        <textarea rows="3" cols="40"></textarea><br /><br />
+        <input type="submit" value="Submit" />
+        <input type="reset" value="Reset" />
+      </form>
+    </div>
+    <script>
+      function validateForm() {
+        const lastName = document.getElementById("lastName").value.trim();
+        const firstName = document.getElementById("firstName").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        if (!lastName || !firstName || !phone) {
+          alert("Vui lòng nhập đầy đủ Họ, Tên và Số điện thoại.");
+          return false;
+        }
+        if (!/^\d{10}$/.test(phone)) {
+          alert("Số điện thoại phải là 10 chữ số.");
+          return false;
+        }
+        return true;
+      }
+    </script>
+
+    <div class="menu">
+      <h1>BÀI TẬP</h1>
+      <p><a href="index4.html">Bài 4</a></p>
+      <p><a href="index5.html">Bài 5</a></p>
+      <p><a href="index6_1.html">Bài 6.1</a></p>
+      <p><a href="index6_2.html">Bài 6.2</a></p>
+      <p class="home"><a href="index.html">HOME</a></p>
+    </div>
+  </body>
+</html>

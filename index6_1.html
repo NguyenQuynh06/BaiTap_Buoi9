@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 6.1</title>
+    <style>
+      #text {
+        font-size: 20px;
+        padding: 10px;
+      }
+      .menu {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        margin-left: 15%;
+      }
+      .menu a {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: rgb(202, 105, 138);
+        transition: 0.3s;
+      }
+      .menu a:hover {
+        background-color: rgb(139, 72, 95);
+      }
+      .home a {
+        background-color: rgb(20, 209, 209);
+      }
+      .home a:hover {
+        background-color: rgba(25, 139, 139, 0.651);
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">đổi màu tôi đi</p>
+    <button onclick="doiMau()">xanh</button>
+    <script>
+      function doiMau() {
+        document.getElementById("text").style.backgroundColor = "blue";
+      }
+    </script>
+
+    <div class="menu">
+      <h1>BÀI TẬP</h1>
+      <p><a href="index4.html">Bài 4</a></p>
+      <p><a href="index5.html">Bài 5</a></p>
+      <p><a href="index6_1.html">Bài 6.1</a></p>
+      <p><a href="index6_2.html">Bài 6.2</a></p>
+      <p class="home"><a href="index.html">HOME</a></p>
+    </div>
+  </body>
+</html>

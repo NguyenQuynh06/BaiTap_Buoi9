@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bài 5</title>
+    <style>
+      .slideshow-container {
+        width: 600px;
+        position: relative;
+        margin: auto;
+      }
+      .slide {
+        display: none;
+        width: 100%;
+      }
+      .slide img {
+        width: 100%;
+        height: auto;
+      }
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px;
+        color: white;
+        font-size: 24px;
+        background-color: rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        border: none;
+      }
+      .prev {
+        left: 0;
+      }
+      .next {
+        right: 0;
+      }
+      .menu {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        margin-left: 15%;
+      }
+      .menu a {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: rgb(202, 105, 138);
+        transition: 0.3s;
+      }
+      .menu a:hover {
+        background-color: rgb(139, 72, 95);
+      }
+      .home a {
+        background-color: rgb(20, 209, 209);
+      }
+      .home a:hover {
+        background-color: rgba(25, 139, 139, 0.651);
+      }
+    </style>
+  </head>
+  <body>
+    <h2 style="text-align: center">Slide Show Ảnh</h2>
+    <div class="slideshow-container">
+      <div class="slide">
+        <img
+          src="https://ih1.redbubble.net/image.5213127189.2949/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg"
+          alt="Ảnh 1"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://i.pinimg.com/736x/36/70/04/367004cabbed1ea990b7a4757847333b.jpg"
+          alt="Ảnh 2"
+        />
+      </div>
+      <div class="slide">
+        <img
+          src="https://ih1.redbubble.net/image.5252722902.0441/flat,750x,075,f-pad,750x1000,f8f8f8.u2.jpg"
+          alt="Ảnh 3"
+        />
+      </div>
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+    <script>
+      let currentSlide = 0;
+      const slides = document.getElementsByClassName("slide");
+      function showSlide(index) {
+        if (index >= slides.length) currentSlide = 0;
+        else if (index < 0) currentSlide = slides.length - 1;
+        else currentSlide = index;
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[currentSlide].style.display = "block";
+      }
+      function changeSlide(n) {
+        showSlide(currentSlide + n);
+      }
+      showSlide(currentSlide);
+    </script>
+
+    <div class="menu">
+      <h1>BÀI TẬP</h1>
+      <p><a href="index4.html">Bài 4</a></p>
+      <p><a href="index5.html">Bài 5</a></p>
+      <p><a href="index6_1.html">Bài 6.1</a></p>
+      <p><a href="index6_2.html">Bài 6.2</a></p>
+      <p class="home"><a href="index.html">HOME</a></p>
+    </div>
+  </body>
+</html>
